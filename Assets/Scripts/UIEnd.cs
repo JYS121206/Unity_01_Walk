@@ -23,6 +23,6 @@ public class UIEnd : MonoBehaviour
     public void SetEndCount()
     {
         scoreCount.text = PLManager.Player.score + " Á¡";
-        moneyCount.text = "+ " + Wallet.wallet;
+        moneyCount.text = "+ " + Wallet.money;
     }
 }

@@ -4,5 +4,6 @@ using UnityEngine;
 
 public static class Wallet
 {
-    public static int wallet;
+    public static int wallet = 0;
+    public static int money;
 }

@@ -50,53 +50,53 @@ public class PCPlayer : MonoBehaviour
     {
         if (score <= 9)
         {
-            Wallet.wallet += 0;
+            Wallet.money += 0;
         }
 
         else if(score <= 10)
         {
-            Wallet.wallet += 100;
+            Wallet.money += 100;
         }
 
         else if (score <= 30)
         {
-            Wallet.wallet += 300;
+            Wallet.money += 300;
         }
 
         else if (score <= 50)
         {
-            Wallet.wallet += 600;
+            Wallet.money += 600;
         }
 
 
         else if (score <= 80)
         {
-            Wallet.wallet += 1000;
+            Wallet.money += 1000;
         }
 
 
         else if (score <= 100)
         {
-            Wallet.wallet += 1200;
+            Wallet.money += 1200;
         }
 
         else if (score <= 120)
         {
-            Wallet.wallet += 1500;
+            Wallet.money += 1500;
         }
 
         else if (score <= 150)
         {
-            Wallet.wallet += 2000;
+            Wallet.money += 2000;
         }
 
         else if (score <= 170)
         {
-            Wallet.wallet += 2500;
+            Wallet.money += 2500;
         }
         else
         {
-            Wallet.wallet += 3000;
+            Wallet.money += 3000;
         }
     }
 }

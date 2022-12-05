@@ -8,6 +8,7 @@ public class SceneChanger : MonoBehaviour
 {
     public void OpenMain()
     {
+        Wallet.wallet += Wallet.money;
         SceneManager.LoadScene("Main");
     }
 
