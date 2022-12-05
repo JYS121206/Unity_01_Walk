@@ -84,6 +84,7 @@ public class PStageManager : MonoBehaviour
         //if (Enemies[currentEnemy].GetComponent<Enemy3>())
         //    Enemies[currentEnemy].GetComponent<Enemy3>().ProgressEnemy();
 
+        //*
         //위 코드는 Enemy1부터 Enemy3까지 순차적으로 실행되기 때문에
         //Enemy1 실행 중 다음 함수가 실행될 우려가 있습니다.
         //(correct 키를 눌러도 다음 함수에선 incorrect키로 인식되기 때문에 점수가 깎일 수 있음)
