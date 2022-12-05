@@ -14,6 +14,7 @@ public class SceneChanger : MonoBehaviour
 
     public void OpenGame()
     {
+        Wallet.money = 0;
         SceneManager.LoadScene("Walk");
     }
 
