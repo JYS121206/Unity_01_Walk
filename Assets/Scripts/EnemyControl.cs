@@ -16,18 +16,6 @@ public class EnemyControl : MonoBehaviour
         stageManager = manager;
     }
 
-    public void CurrentEnemy(KeyCode correct, KeyCode incorrect1, KeyCode incorrect2)
-    {
-        for (int i = 0; i > stageManager.currentEnemyCount; i++)
-        {
-            if (stageManager.currentEnemy == i)
-            {
-                Progress(correct, incorrect1, incorrect2);
-                break;
-            }
-        }
-    }
-
     public void Progress(KeyCode correct, KeyCode incorrect1, KeyCode incorrect2)
     {
 
@@ -37,7 +25,7 @@ public class EnemyControl : MonoBehaviour
             PLManager.Player.ForwardMovement();
             PLManager.Player.GetCombo();
             PLManager.Player.GetScore();
-            uIWalk.limitTime += 2f;
+            uIWalk.limitTime += 0.1f;
             stageManager.currentEnemy++;
             //0.5초 뒤에 다시 왼쪽으로 당겨오고 싶음
             //(0.5초 딜레이) //생략
@@ -49,7 +37,7 @@ public class EnemyControl : MonoBehaviour
         else if (Input.GetKeyDown(incorrect1) || Input.GetKeyDown(incorrect2))
         {
             PLManager.Player.LostCombo();
-            uIWalk.limitTime -= 6;
+            uIWalk.limitTime -= 6.0f;
         }
         uIWalk.SetCount(PLManager.Player.score, PLManager.Player.combo);
     }

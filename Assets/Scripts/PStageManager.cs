@@ -23,12 +23,12 @@ public class PStageManager : MonoBehaviour
         //Object enemy3 = Resources.Load("Enemy3");
         //Instantiate(enemy3, new Vector3(5.25f, -1.46f, 0), Quaternion.identity);
 
-        GenerateStage(100);
+        GenerateStage(200);
     }
 
     private void Update()
     {
-        etc();
+        Etc();
     }
 
 
@@ -54,21 +54,6 @@ public class PStageManager : MonoBehaviour
         currentEnemyCount++;
     }
 
-    public void GenerateStage2(int enemyCount)
-    {
-        Enemies = new GameObject[enemyCount];
-
-        for (int i = 0; i < enemyCount; i++)
-        {
-            if (i >= 4)
-            {
-                GameObject enmey = SpawnRandomEnemy();
-                Enemies[i] = enmey;
-
-                enmey.transform.position = new Vector3(-5.25f + (5 * i), -1.46f, 0);
-            }
-        }
-    }
 
     public GameObject SpawnRandomEnemy()
     {
@@ -88,16 +73,22 @@ public class PStageManager : MonoBehaviour
         return enemyObject;
     }
 
-    public void etc()
+    public void Etc()
     {
-        if (Enemies[currentEnemy].GetComponent<Enemy1>())
-            Enemies[currentEnemy].GetComponent<Enemy1>().ProgressEnemy();
+        //if (Enemies[currentEnemy].GetComponent<Enemy1>())
+        //    Enemies[currentEnemy].GetComponent<Enemy1>().ProgressEnemy();
 
-        if (Enemies[currentEnemy].GetComponent<Enemy2>())
-            Enemies[currentEnemy].GetComponent<Enemy2>().ProgressEnemy();
+        //if (Enemies[currentEnemy].GetComponent<Enemy2>())
+        //    Enemies[currentEnemy].GetComponent<Enemy2>().ProgressEnemy();
 
-        if (Enemies[currentEnemy].GetComponent<Enemy3>())
-            Enemies[currentEnemy].GetComponent<Enemy3>().ProgressEnemy();
+        //if (Enemies[currentEnemy].GetComponent<Enemy3>())
+        //    Enemies[currentEnemy].GetComponent<Enemy3>().ProgressEnemy();
+
+        //위 코드는 Enemy1부터 Enemy3까지 순차적으로 실행되기 때문에
+        //Enemy1 실행 중 다음 함수가 실행될 우려가 있습니다.
+        //(correct 키를 눌러도 다음 함수에선 incorrect키로 인식되기 때문에 점수가 깎일 수 있음)
+
+        Enemies[currentEnemy].SendMessage("ProgressEnemy");
     }
 
     public void BackwardMovement()
