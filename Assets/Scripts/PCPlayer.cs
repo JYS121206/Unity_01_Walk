@@ -6,8 +6,11 @@ public class PCPlayer : MonoBehaviour
 {
     //public float hp = 100.0f;
 
+    [HideInInspector]
     public int money = 0;
+    [HideInInspector]
     public int score = 0;
+    [HideInInspector]
     public int combo = 0;
 
     private void Start()

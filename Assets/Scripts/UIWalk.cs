@@ -8,8 +8,6 @@ public class UIWalk : MonoBehaviour
     public Text scoreCount;
     public Text comboCount;
     public Image timeCount;
-    public Image stopImg;
-    public Image playImg;
 
     public float limitTime = 50.0f;
     bool isPause;
@@ -21,8 +19,6 @@ public class UIWalk : MonoBehaviour
         scoreCount= GetComponentsInChildren<Text>()[0];
         comboCount = GetComponentsInChildren<Text>()[1];
         timeCount = GetComponentsInChildren<Image>()[6];
-        stopImg = GetComponentsInChildren<Image>()[9];
-        playImg = GetComponentsInChildren<Image>()[10];
         isPause = false;
 
         sceneChanger = GameObject.FindGameObjectWithTag("Canvas").GetComponent<SceneChanger>();
@@ -53,6 +49,7 @@ public class UIWalk : MonoBehaviour
         if (limitTime <= 0)
         {
             Debug.Log("게임 종료");
+            PLManager.Player.GetMoney();
             sceneChanger.OpenEnd();
         }
     }
