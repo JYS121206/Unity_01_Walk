@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PLManager : MonoBehaviour
+public static class Wallet
 {
-    public static PCPlayer Player;
-}   
+    public static int wallet;
+}

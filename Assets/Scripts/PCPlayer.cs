@@ -7,8 +7,6 @@ public class PCPlayer : MonoBehaviour
     //public float hp = 100.0f;
 
     [HideInInspector]
-    public int money = 0;
-    [HideInInspector]
     public int score = 0;
     [HideInInspector]
     public int combo = 0;
@@ -50,50 +48,55 @@ public class PCPlayer : MonoBehaviour
 
     public void GetMoney()
     {
-        if (score >= 10)
+        if (score <= 9)
         {
-            money += 100;
+            Wallet.wallet += 0;
         }
 
-        else if (score >= 30)
+        else if(score <= 10)
         {
-            money += 300;
+            Wallet.wallet += 100;
         }
 
-        else if (score >= 50)
+        else if (score <= 30)
         {
-            money += 600;
+            Wallet.wallet += 300;
+        }
+
+        else if (score <= 50)
+        {
+            Wallet.wallet += 600;
         }
 
 
-        else if (score >= 80)
+        else if (score <= 80)
         {
-            money += 1000;
+            Wallet.wallet += 1000;
         }
 
 
-        else if (score >= 100)
+        else if (score <= 100)
         {
-            money += 1200;
+            Wallet.wallet += 1200;
         }
 
-        else if (score >= 120)
+        else if (score <= 120)
         {
-            money += 1500;
+            Wallet.wallet += 1500;
         }
 
-        else if (score >= 150)
+        else if (score <= 150)
         {
-            money += 2000;
+            Wallet.wallet += 2000;
         }
 
-        else if (score >= 170)
+        else if (score <= 170)
         {
-            money += 2500;
+            Wallet.wallet += 2500;
         }
         else
         {
-            money += 3000;
+            Wallet.wallet += 3000;
         }
     }
 }

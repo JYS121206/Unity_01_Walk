@@ -54,7 +54,6 @@ public class PStageManager : MonoBehaviour
         currentEnemyCount++;
     }
 
-
     public GameObject SpawnRandomEnemy()
     {
         int rand = Random.Range(0, 3);

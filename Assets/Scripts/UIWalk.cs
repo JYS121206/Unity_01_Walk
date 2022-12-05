@@ -33,7 +33,7 @@ public class UIWalk : MonoBehaviour
 
     public void SetCount(int score, int combo)
     {
-        scoreCount.text = score +" Á¡";
+        scoreCount.text = score +" ";
         comboCount.text = combo + " ";
     }
 

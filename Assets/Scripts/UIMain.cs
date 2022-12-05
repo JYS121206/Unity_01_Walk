@@ -19,6 +19,6 @@ public class UIMain : MonoBehaviour
 
     public void SetMainCount()
     {
-        moneyCount.text = PLManager.Player.money + " ";
+        moneyCount.text = Wallet.wallet + " ";
     }
 }
